@@ -3,216 +3,363 @@
 <head>
 <style>
 
-*{
-margin: 0;
-font-size 18px;
-font-family: helvetica;
+/* UNIVERSAL STYLES */
 
+
+html {
+font-size: 18px;
+background-color: white;
+font-family: Helvetica, sans-serif;
+line-height: 1.4;
 }
+
+
+h1, h4 {
+font-weight: bold;
+}
+
+h1{
+font-size: 2rem;
+line-height: 1.2;
+margin: 0.25rem 0;
+}
+
+.center-container{
+max-width: 960px;
+margin: 0 auto;
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* HEADER STYLES */
 
 header{
 background-color: black;
-height: 50px;
 color: white;
-display: flex;
-align-items: center;
 }
 
+header .center-container{
+display: flex;
+align-items: center;
+padding: .66rem 0 .66rem 0.5rem;
+}
+
+.logo{
+height: 1.5rem;
+padding-right: 1rem;
+}
+
+
+/* HERO STYLES */
+
 .hero {
-  background-color: lightblue;
-  height: 25rem;
+background-image: url("https://i.imgur.com/EIFQoUy.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 25rem;
 }
 
 .black-box{
+position: relative;
+top: 6rem;
 width: 20rem;
 background-color: black;
 color: white;
 padding: 2rem 3rem;
 text-transform: uppercase;
-font-weight: bold;
 }
 
-h1{
-margin-top: .25rem;
+@media only screen and (max-width: 470px) {
+  .hero {
+    height: 15rem;
+  }
+
+  .black-box {
+    width: 100%;
+    padding: 1rem 2rem;
+    top: 10rem;
+  }
+
+   h4 {
+    font-size: .77rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
 }
 
-menu{
+
+/* NAV STYLES */
+
+nav{
 background-color: firebrick;
 color: white;
-padding: .75rem 0px;
+}
+
+.nav-container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0.75em 0;
+}
+
+.mobile-nav{
+display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .nav-container .nav-item {
+    display: none;
+  }
+
+.mobile-nav {
+display: block;
+text-align: center;
+width: 100%;
+  }
+
+
+}
+
+
+/* PRODUCT STYLES */
+
+.products{
+display: flex;
+justify-content: space-between;
+margin-top: 3rem;
 }
 
 .product{
-border: 4px solid black;
 width: 30%;
 }
 
-.product img{
-display: block;
-margin: 2rem auto;
+.product-image {
+display: flex;
+justify-content: center;
+align-items: center;
+border: 4px solid black;
+padding: 2rem 0;
+ height: 9rem;
 }
 
-.product span{
-background: black;
+.product-image img {
+  max-width: 8rem;
+}
+
+
+.product-name{
+background-color: black;
 color: white;
 display: block;
 text-align: center;
-}
-
-.center-main-content{
-width: 960px;
-margin: 0 auto;
+padding: 0.5rem;
 }
 
 
-main{
-margin: 3rem 0;
-display: flex;
-justify-content: space-between;
+
+@media only screen and (max-width: 1024px) {
+  .product {
+    width: 47%;
+  }
+
+  .three {
+    display: none;
+  }
 }
 
-.info-location-container{
-width: 35%;
+@media only screen and (max-width: 470px) {
+  .products,
+  .info {
+    flex-wrap: wrap;
+  }
+
+  .product {
+    width: 90%;
+    margin: auto;
+  }
+
+  .two {
+    display: none;
+  }
+
+  .info {
+    width: 90%;
+    margin: 0.5rem auto;
+  }
+
+  .info-title{
+  text-align: center;
+  }
 }
 
-.info-hours-container{
-width: 35%;
-}
+
+/* BUSINESS INFO STYLES */
 
 .info-container{
 display: flex;
 justify-content: space-between;
-}
-
-.center-logo{
-width: 960px;
-margin: 0 auto;
+margin-top: 3rem;
 }
 
 .info{
-background-color: black;
-color: white;
-padding: 1rem 0;
-padding-left: 2rem;
+width: 35%;
 }
 
+.info-title{
+  display: block;
+  padding: 1rem 2rem;
+  background-color: black;
+  color: white;
+}
+
+
+/* FOOTER STYLES */
 
 footer{
 background-color: black;
 color: white;
 text-align: left;
-height: 5rem;
 margin-top: 4rem;
-display: flex;
-align-items: center;
+padding: 5rem 0;
 }
 
-.center-menu{
-width: 960px;
-margin: 0 auto;
-display: flex;
-justify-content: space-between;
+@media only screen and (max-width: 470px) {
+  footer {
+    text-align: center;
+  }
 }
 
-.footer-center{
-width: 960px;
-margin: 0 auto;
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-.center-black-box{
-width: 960px;
-margin: 0 auto;
-position: relative;
-top: 75px;
-}
+
 
 </style>
 </head>
+
+
+
 <body>
 
+<!-- HEADER -->
+
 <header>
-<div class="center-logo">
-<img src="https://imgur.com/KG2Dv7z">
-<span>SECRET AGENT SUPPLY</span>
+<div class="center-container">
+
+<img src="https://i.imgur.com/KG2Dv7z.png" class="logo">
+<span class="company-name">SECRET AGENT SUPPLY</span>
+
 </div>
 
 </header>
 
+<!-- HERO -->
 
 <div class="hero">
-<div class="center-black-box">
+<div class="center-container">
 <div class="black-box">
-<span>New Arrival</span>
+<h4>New Arrival</h4>
 <h1>Sport Bikes And Motorcycles</h1>
 </div>
 </div>
 </div>
 
-<menu>
+<!-- NAVIGATION -->
 
-<div class="center-menu">
+<nav>
 
-<span>Eyewear</span>
-<span>Apparel</span>
-<span>Gadgets</span>
-<span>Vehicles</span>
-<span>Classes</span>
-<span>Contact</span>
+<div class="nav-container center-container">
+
+<span class="nav-item">Eyewear</span>
+<span class="nav-item">Apparel</span>
+<span class="nav-item">Gadgets</span>
+<span class="nav-item">Vehicles</span>
+<span class="nav-item">Classes</span>
+<span class="nav-item">Contact</span>
+
+
+<div class="mobile-nav">
+<span>Menu</span>
 </div>
 
-</menu>
+</div>
 
-<div class="center-main-content">
-<main>
+</nav>
 
-<div class="product one">
+<!-- PRODUCTS -->
+
+<div class="center-container">
+<div class="products">
+
+<div class="product">
+
+<div class="product-image">
 <img src="https://oie.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg">
-<span>Exploding Pen</span>
+</div>
+
+<span class="product-name">Exploding Pen</span>
 </div>
 
 <div class="product two">
+<div class="product-image">
 <img src="https://oie.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg">
-<span>Cellular Watch</span>
+</div>
+<span class="product-name">Cellular Watch</span>
 </div>
 
 <div class="product three">
+<div class="product-image">
 <img src="https://oie.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg">
-<span>Thermal Glasses</span>
+</div>
+<span class="product-name">Thermal Glasses</span>
+</div>
 </div>
 
-</main>
-
-
+<!-- INFO -->
 
 <div class="info-container">
 
-<div class="info-location-container">
+<div class="info">
 
-<div class="info location">
+<div class="info-title">
 <span>Location</span>
 
 </div>
-<span>347 Kosciuszko St, Brooklyn NY</span>
+<span class="info-content">347 Kosciuszko St, Brooklyn NY</span>
 
 </div>
 
-<div class="info-hours-container">
+<div class="info">
 
-<div class="info hours">
+<div class="info-title">
 <span>Hours</span>
 </div>
-<span>8 am to 8 pm</span>
+<span class="info-content">8 am to 8 pm</span>
 
+</div>
 </div>
 
 </div>
 
-</div>
-
+<!-- FOOTER -->
 
 <footer>
-<div class="footer-center">
-<span>Copyright Secret Agent Supply Inc</span>
+<div class="center-container">
+<span>&copy;
+Copyright Secret Agent Supply Inc</span>
 </div>
 </footer>
 
